@@ -73,11 +73,13 @@ document.getElementById("convert1").addEventListener("click", function() {
     data = data.replace(/ /g, "");
     // 공백 삭제
     data = data.split('\n');
+    temp = [ ];
     for (let i = 0; i < data.length; i++) {
-        if (data[i] === "") {
-            data.splice(i, 1);
+        if (data[i] != "") {
+            temp.push( data[i] )
         }
     }
+    data = temp;
     
     let conv = "검색 결과물 : <br>==========<br>";
     // 검색 결과물
