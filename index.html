@@ -4,18 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>리더십팀프로젝트2조</title>
+    <style>
+        .links {
+            opacity: 1;
+            transition: opacity 0.1s;
+        }
+    
+        .links a {
+            font-size: 20px;
+            text-decoration: none;
+            transition: font-size 0.3s;
+        }
+
+        .links a:hover {
+            font-size: 40px;
+        }
+    </style>
 </head>
 <body>
-    <p>연의23 리더십 팀 프로젝트 2조 진급요건 계산기 테스트 버전입니다</p>
+    <div class="links">
+        <a href="https://github.com/taewook427/lteam_test">도움말</a><br>
+        <a href="./func/test541a.html">관리자 페이지</a><br>
+        <a href="./func/test542a.html">사용자 페이지</a><br>
+        <a href="https://naver.com">여기에 만족도조사 설문링크 입력</a>
+    </div>
     
-    <p><a href="https://github.com/taewook427/lteam_test">도움말</a></p>
-    
-    <p><a href="./func/test541a.html">관리자 페이지</a></p>
+    <p>last update: 2023.10.22</p>
 
-    <p><a href="./func/test542a.html">사용자 페이지</a></p>
+    <script>
+        const links = document.querySelectorAll(".links a");
 
-    <p><a href="https://naver.com">여기에 만족도조사 설문링크 입력</a></p>
+        // 순차적 표시
+        function revealLinks() {
+            for (let i = 0; i < links.length; i++) {
+                links[i].style.display = "block";
+                links[i].style.opacity = 0;
+                
+                setTimeout( () => {links[i].style.opacity = 1}, 200 + 100 * i );
+                } // 0.1초 간격으로 다음 링크 표시
+        }
+        revealLinks();
 
-    <p>last update : 2023.10.22</p>
+        // 마우스 호버 이벤트
+        links.forEach(link => {
+            link.addEventListener("mouseover", () => {
+                link.style.fontSize = "40px";
+            });
+
+            link.addEventListener("mouseout", () => {
+                link.style.fontSize = "20px";
+            });
+        });
+    </script>
 </body>
 </html>
