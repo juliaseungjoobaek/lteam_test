@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>리더십팀프로젝트2조</title>
+    <style>
+    body {
+        background-color: royalblue;
+        color: gold;
+        }
+    
+        .text-container {
+            font-size: 25px;
+            white-space: pre-line;
+            color: gold;
+        }
+    
+        .links {
+            opacity: 1;
+            transition: opacity 0.1s;
+        }
+    
+        .links a {
+            font-size: 20px;
+            text-decoration: none;
+            transition: font-size 0.3s;
+            color: gold;
+        }
+
+        .links a:hover {
+            font-size: 40px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="text-container">
+         <p id="loading-text"></p>
+    </div>
+    
+    <div class="links">
+        <a id="lnk0" href="https://github.com/taewook427/lteam_test">도움말</a><br>
+        <a id="lnk1" href="./func/test541a.html">관리자 페이지</a><br>
+        <a id="lnk2" href="./func/test542a.html">사용자 페이지</a><br>
+        <a id="lnk3" href="https://naver.com">여기에 만족도조사 설문링크 입력</a>
+    </div>
+
+    <div class="show">
+        <p id="msg"></p>
+    </div>
+
+    <script>
+        const links = document.querySelectorAll(".links a");
+        const textElement = document.getElementById("loading-text");
+        const loadingText = "연의23 리더십 팀 프로젝트 2조\n진급요건 계산기 테스트 버전입니다"; // 나타낼 텍스트
+
+        // 순차적 표시
+        function revealLinks() {
+            for (let i = 0; i < loadingText.length; i++) {
+                setTimeout( () => {textElement.textContent += loadingText[i]}, 400 + 30 * i );
+                }
+            let addtime = 400 + 30 * loadingText.length + 400;
+            for (let i = 0; i < links.length; i++) {
+                links[i].style.display = "block";
+                links[i].style.opacity = 0;
+                
+                setTimeout( () => {links[i].style.opacity = 1}, addtime + 100 * i );
+                } // 0.1초 간격으로 다음 링크 표시
+        }
+        revealLinks();
+
+        // 마우스 호버 이벤트
+        links.forEach(link => {
+            link.addEventListener("mouseover", () => {
+                link.style.fontSize = "40px";
+            });
+
+            link.addEventListener("mouseout", () => {
+                link.style.fontSize = "20px";
+            });
+        });
+
+        const msg0 = document.getElementById("msg");
+        msg0.style.opacity = 0;
+        setTimeout( () => {msg0.style.opacity = 1;}, 2000 );
+        const tgt0 = document.getElementById("lnk0");
+        tgt0.addEventListener("mouseover", () => {
+            msg0.innerHTML = "<br><br>        사용 방법과 자주 묻는 질문을 알아봅시다.";
+        });
+        tgt0.addEventListener("mouseout", () => {
+            msg0.innerHTML = "";
+        });
+        const tgt1 = document.getElementById("lnk1");
+        tgt1.addEventListener("mouseover", () => {
+            msg0.innerHTML = "<br><br>        2조 조원들을 위한 페이지입니다.";
+        });
+        tgt1.addEventListener("mouseout", () => {
+            msg0.innerHTML = "";
+        });
+        const tgt2 = document.getElementById("lnk2");
+        tgt2.addEventListener("mouseover", () => {
+            msg0.innerHTML = "<br><br>        사용자 기능은 노트북으로 들어와 주세요.";
+        });
+        tgt2.addEventListener("mouseout", () => {
+            msg0.innerHTML = "";
+        });
+        const tgt3 = document.getElementById("lnk3");
+        tgt3.addEventListener("mouseover", () => {
+            msg0.innerHTML = "<br><br>        앱을 이용한 후 만족도 평가 설문조사에 참여해 주세요.";
+        });
+        tgt3.addEventListener("mouseout", () => {
+            msg0.innerHTML = "";
+        });
+    </script>
+</body>
+</html>
