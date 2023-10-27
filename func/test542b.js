@@ -744,10 +744,10 @@ document.getElementById("button5").addEventListener("click", function() {
         flag = flag + result1[i];
     }
     if (flag == 0) {
-        result0[9] = ".\n최종 진급 여부 : Pass (진급 불가, 평균 " + temp[2].toString().substring(0, 5) + ", 학점 " + temp[0].toString() + ")\n.";
+        result0[9] = ".\n최종 진급 여부 : Pass (진급 가능, 평균 " + temp[2].toString().substring(0, 5) + ", 학점 " + temp[0].toString() + ")\n.";
         result1[9] = 0;
     } else {
-        result0[9] = ".\n최종 진급 여부 : Fail (진급 가능, 평균 " + temp[2].toString().substring(0, 5) + ", 학점 " + temp[0].toString() + ")\n.";
+        result0[9] = ".\n최종 진급 여부 : Fail (진급 불가, 평균 " + temp[2].toString().substring(0, 5) + ", 학점 " + temp[0].toString() + ")\n.";
         result1[9] = 1;
     }
 
