@@ -125,6 +125,36 @@ let pretype0 = [ ];
 let pretype1 = [ ];
 let pretype2 = [ ];
 
+// 학점수 인식
+async function readtxt4() {
+    fetch("../data/count.txt")
+    .then( response => response.text() )
+    .then( text => precount0 = text.replace(/\r/g, "").split("\n") )
+    .then( () => divtext4() )
+    .catch(error => document.getElementById("output4").innerHTML = "파일 읽기 오류 : " + error);
+}
+
+async function divtext4() {
+    for (let i = 0; i < precount0.length; i++) {
+        let temp = precount0[i];
+        if (temp != "") {
+            if (temp[0] != "=") {
+                let t = temp.split(",");
+                precount1.push(t[0]);
+                if (t[1] == "unknown") {
+                    precount2.push(3); // unknown -> 3
+                } else {
+                    precount2.push( Number(t[1]) );
+                }
+            }
+        }
+    }
+}
+
+let precount0 = [ ];
+let precount1 = [ ];
+let precount2 = [ ];
+
 // !!!!!!!!!! 특수과목 (문의필요) !!!!!!!!!!
 let predouble = ["STA1001", "MED2131"]; // 중복 카운트 가능한 과목
 let prechoose = ["CHE1101", "BIO1101"]; // 교양 아닌 전공선택으로 인정되는 과목
@@ -197,6 +227,7 @@ readtxt0();
 readtxt1();
 readtxt2();
 readtxt3();
+readtxt4();
 precookie();
 initpage();
 console.log("기본 데이터 로드 완료");
@@ -576,6 +607,7 @@ document.getElementById("button3").addEventListener("click", function() { // 버
     // 결과물 문자열
 
     let tp = ['일반', '전기', '전선', '전필', '교직', '대교', '교기', 'RC', '-', 'UICE', 'MB', 'ME', 'CC', 'MR', 'LHP'];
+    let cotp = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
     for (let i = 0; i < datain.length; i++) {
         if (datain[i] === "") {
             datain.splice(i, 1);
@@ -595,6 +627,15 @@ document.getElementById("button3").addEventListener("click", function() { // 버
                 for (let j = 0; j < pretype1.length; j++) {
                     if (pretype1[j] == a) {
                         b = pretype2[j];
+                        break;
+                    }
+                }
+            }
+            if (cotp.indexOf(c) == -1) {
+                c = 3;
+                for (let j = 0; j < precount1.length; j++) {
+                    if (precount1[j] == a) {
+                        c = precount2[j];
                         break;
                     }
                 }
