@@ -4372,3 +4372,10 @@ LEP3003,노인교육론,pedagogyoftheaged
 LEP3004,기업교육론,corporateeducation&training
 LEP3005,직업진로설계,workandcareerdevelopment
 LEP4001,평생교육실습,practicum
+MED1111,프레시맨세미나,freshmanseminar
+MED1114,리더십팀프로젝트,
+MED1112,인문사회의학1,
+MED1113,인문사회의학2,
+MED2111,인문사회의학3,
+MED2112,인문사회의학4,
+MED1109,유기화학,
