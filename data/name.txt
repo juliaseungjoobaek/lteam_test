@@ -398,8 +398,8 @@ SLS3209,스포츠마케팅,sportmarketing
 SLS3210,특수체육,adaptedphysicaleducation
 SLS3214,스포츠산업경영최신주제토론세미나1,advancedseminar:topicsinsportindustry
 SLS3311,이벤트기획및진행,eventplanningandoperations
-SLS3312,평생스포츠지도및실습
-,SLS3334,째즈댄스2,jazzdanceⅱ
+SLS3312,평생스포츠지도및실습,
+SLS3334,째즈댄스2,jazzdanceⅱ
 SLS4003,경기분석방법론,
 SLS4102,졸업실기,comprehensiveskilltest
 SLS4202,스포츠응용산업전공실습,sportindustrystudiespracticum
@@ -468,8 +468,8 @@ YCF1652,수어,signlanguage
 YCF1753,콘텐츠라이팅,contentwriting
 HUM2037,동서양공연예술의이해,understandingofperformingartsintheeastandthewest
 HUM2038,디지털언어데이터와인문학,digitallanguagedataandhumanities
-HUM2039,인문학을위한코딩codingforhumanitiesbasic
-,HUM2040,인터랙티브스토리텔링디자인,interactivestorytellingdesign
+HUM2039,인문학을위한코딩,codingforhumanitiesbasic
+HUM2040,인터랙티브스토리텔링디자인,interactivestorytellingdesign
 HUM2041,컴퓨터를활용한언어분석,computationalanalysisoflanguage
 HUM2042,한국의세계유산과디지털리터러시,worldheritageofkoreaanddigitalliteracy
 HUM2043,한국대중문화로읽는인문학,koreanpopularcultureandhumanities
