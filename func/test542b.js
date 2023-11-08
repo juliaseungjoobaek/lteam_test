@@ -158,7 +158,7 @@ let precount2 = [ ];
 // !!!!!!!!!! 특수과목 (문의필요) !!!!!!!!!!
 let predouble = ["STA1001", "MED2131"]; // 중복 카운트 가능한 과목
 let prechoose = ["CHE1101", "BIO1101"]; // 교양 아닌 전공선택으로 인정되는 과목
-let prephysics = ["PHY1001", "PHY1002", "PHY1005", "PHY1006", "PHY1011", "PHY1012", "PHY1015", "UCC1102"]; // 자연과우주 아닌 논리와수리로 인정되는 물리학 과목
+let prephysics = ["PHY1001", "PHY1002"]; // 자연과우주 아닌 논리와수리로 인정되는 물리학 과목
 async function prespecial() { // 물리학 과목 재지정
     let ins = 0;
     for (let i = 0; i < prebasics1.length; i++) {
