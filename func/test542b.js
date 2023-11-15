@@ -1046,7 +1046,9 @@ function subf0() { // 부전공 진행 척도 3개
     let a1 = 0;
     let a2 = 0;
     for (let i = 0; i < progress.length; i++) {
-        console.log(preminor1[i], (progress[i] * 100).toString().substring(0, 5) + "%");
+	if (progress[i] > 0.01) {
+	    console.log(preminor1[i], (progress[i] * 100).toString().substring(0, 5) + "%");
+	}
     }
     for (let i = 0; i < progress.length; i++) {
         if ( progress[a0] <= progress[i] ){
